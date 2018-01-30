@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Constants:
     // TODO: Create the base URL
-    private final String BASE_URL = "https://apiv2.bitcoinaverage.com/indices/global/ticker/";
+    private final String BASE_URL = "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTC";
 
     // Member Variables:
     TextView mPriceTextView;
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     private void letsDoSomeNetworking(String url, String currency) {
 
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get(BASE_URL + "BTC" + currency, new RequestParams(), new JsonHttpResponseHandler() {
+        client.get(BASE_URL + currency, new RequestParams(), new JsonHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
